@@ -1,0 +1,11 @@
+{
+	"exp1":
+	[
+		{
+			"yarn":["pi","10","100"],
+			"cardinality": 1,
+			"conf":{"hdfs":{"DATANODE": {"dfs_datanode_du_reserved": "8455053312"}},
+					"yarn":{"NODEMANAGER": {"mapreduce_am_max-attempts": "2"}}}
+		}
+	]
+}
