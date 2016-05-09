@@ -19,19 +19,10 @@ limitations under the License.
 
 import subprocess
 import json
-import logging
+from pyanomalyLogger import *
 import os.path
 import datetime
 import sys, getopt
-
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-
-logFile = 'exp-%s.log' %datetime.datetime.now()
-
-handler = logging.FileHandler(logFile)
-handler.setLevel(logging.INFO)
-logger.addHandler(handler)
 
 
 def loadJsonDescriptor(descriptor):

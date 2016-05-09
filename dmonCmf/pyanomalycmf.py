@@ -19,7 +19,7 @@ limitations under the License.
 
 from cm_api.api_client import ApiResource
 import sys
-import datetime
+from pyanomalyLogger import *
 
 
 class pyDmonCMFController:
@@ -34,6 +34,7 @@ class pyDmonCMFController:
         for c in api.get_all_clusters():
             clusterInf = "Cluster name %s and version %s" %(c.name, c.version)
             #print "Cluster name %s and version %s" %(c.name, c.version)
+            logger.info("Cluster name %s and version %s", c.name, c.version)
             if c.version == "CDH5":
                 cdh5 = c
         return cdh5, clusterInf
@@ -42,43 +43,68 @@ class pyDmonCMFController:
         supportedServices = ['HDFS', 'ZOOKEEPER', 'YARN', 'SPARK_ON_YARN']
         if service not in supportedServices:
             print "Unsupported service %s" %service
+            logger.error("Unsupported service %s", service)
             sys.exit("Unsupported service %s" %service)
         else:
             for s in cluster.get_all_services():
                 print "Service %s (%s) found in cluster %s with state %s and health %s " %(s.type, s.name, cluster.name, s.serviceState,
                                                                                s.healthSummary)
+                logger.info("Service %s (%s) found in cluster %s with state %s and health %s ", s.type, s.name, cluster.name, s.serviceState,
+                                                                               s.healthSummary)
                 if s.type == service:
                     print "Selected service is %s" %service
+                    logger.info("Selected service is %s", service)
                     selectedService = s
         return selectedService, selectedService.name, selectedService.serviceState, selectedService.healthSummary
 
-    def getServiceConfiguration(self, service):
+    def getServiceConfiguration(self, service, fdescription=False):
         print "Getting configuration for service %s" %service
+        logger.info("Getting configuration for service %s", service)
         for name, config in service.get_config(view='full')[0].items():
             print "Parameter name -> %s" %name
+            logger.info("Parameter name -> %s", name)
             print "Configuration -> %s" %config
+            logger.info("Configuration -> %s", config)
             print "Parameter name for descriptor -> %s" %config.relatedName
-            print "Descritpion of parameter -> %s" %config.description
+            logger.info("Parameter name for descriptor -> %s", config.relatedName)
+            if fdescription:
+                print "Descritpion of parameter -> %s" %config.description
+                logger.info("Descritpion of parameter -> %s", config.description)
             #print config.value
 
     def setServiceConfiguration(self, service, confiDescriptor):
         for k, v in confiDescriptor.iteritems():
             print "Desired role Type is -> %s" %k
+            logger.info("Desired role Type is -> %s", k)
             for role in service.get_all_role_config_groups():
                 # print role
                 # print role.roleType
                 if k in role.roleType:
                     print 'Updating paramerers %s for roleType %s' %(v, k)
+                    logger.info('Updating paramerers %s for roleType %s', v, k)
                     role.update_config(v)
                     print 'Update for roleType %s finished' %k
+                    logger.info('Update for roleType %s finished', k)
         print "Finished desired configuration changes for service %s" %service.name
+        logger.info("Finished desired configuration changes for service %s", service.name)
 
     def restartService(self, service):
         print 'Restarting %s at %s' %(service, datetime.datetime.now())
+        logger.info('Restarting %s at %s', service, datetime.datetime.now())
         cmd = service.restart().wait()
         print "%s active -> %s" %(service, cmd.active)
+        logger.info("%s active -> %s", service, cmd.active)
         print "Active: %s. Success: %s" % (cmd.active, cmd.success)
-        return "Restarted service %s at %s" %(service, datetime.datetime.now())
+        logger.info("Active: %s. Success: %s", cmd.active, cmd.success)
+        if cmd.success:
+            print "Restarted service %s at %s" %(service, datetime.datetime.now())
+            logger.info("Restarted service %s at %s", service, datetime.datetime.now())
+            return 1
+        else:
+            print "Restart of service %s failed at %s" %(service, datetime.datetime.now())
+            logger.info("Restarted of  service failed %s at %s", service, datetime.datetime.now())
+            return 0
+
 
     def restartCluster(self):
         return "Restart entire cluster"
@@ -89,8 +115,14 @@ if __name__ == '__main__':
     user = ''
     passwd = ''
     testCMF = pyDmonCMFController(cm_host, user, passwd)
+    try:
+        cInstance, cInfo = testCMF.getClusterInformation()
+    except Exception as inst:
+        print type(inst)
+        print inst.args
+        sys.exit()
 
-    cInstance, cInfo = testCMF.getClusterInformation()
+
 
     print cInfo
 
