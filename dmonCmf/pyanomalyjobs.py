@@ -19,7 +19,8 @@ limitations under the License.
 
 import subprocess
 import json
-from pyanomalyLogger import *
+from pyanomalyConfig import *
+from pyanomalycmf import *
 import os.path
 import datetime
 import sys, getopt
@@ -98,7 +99,17 @@ def main(argv):
         elif opt in ("-d", "--descriptor"):
             des = arg
             if not os.path.isfile(des):
-                print "Descriptor %s not a file" %(des)
+                print "Descriptor %s not found" %(des)
+            if not os.path.isfile('daconf.ini'):
+                print "CMF Conf file not found, using default values"
+                user = 'admin'
+                passwd = 'admin'
+                endpoint = ' 127.0.0.1'
+            else:
+                user, passwd, endpoint = readConfDA('daconf.ini')
+
+            pyaCNF = pyDmonCMFController(str(endpoint), user, passwd)
+
             des_data = loadJsonDescriptor(des)
             print "Started jobs at %s" %(datetime.datetime.now())
             logger.info("Started jobs at %s", datetime.datetime.now())
@@ -110,7 +121,26 @@ def main(argv):
                 counter = 0
                 for e in v:
                     counter += 1
-                    #print e
+                    # Introduce service config here
+                    if 'conf' in e:
+                        try:
+                            cdh5, cdhInfo = pyaCNF.getClusterInformation()
+                        except Exception as inst:
+                            logger.error('Error connecting to CMF with %s and %s', type(inst), inst.args)
+                            sys.exit('Error connecting to CMF')
+                        setService = e['conf']
+                        for sk, sv in setService.iteritems():
+                            print 'Selecting service %s for parameter changes' %sk
+                            logger.info('Selecting service %s for parameter changes', sk)
+                            serviceObj = pyaCNF.getServiceInfo(sk, cdh5)
+                            logger.info('Changing service %s  parameter %s', sk, sv)
+                            pyaCNF.setServiceConfiguration(serviceObj, sv)
+                            rStatus = pyaCNF.restartService(serviceObj)
+                            if not rStatus:
+                                logger.error('Error while starting service %s, exiting', sk)
+                                sys.exit('Error while starting service %s, exiting', sk)
+                            print 'Started service %s' %sk
+                            logger.info('Started service %s', sk)
                     for i in range(0, e['cardinality']):
                         print "Started iteration %s for job %s from experiment %s at %s" %(i, e, k, datetime.datetime.now())
                         logger.info("Started iteration %s for job %s from experiment %s at %s", i, e, k, datetime.datetime.now())

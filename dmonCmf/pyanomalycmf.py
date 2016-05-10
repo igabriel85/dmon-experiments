@@ -30,7 +30,7 @@ class pyDmonCMFController:
 
     def getClusterInformation(self):
         api = ApiResource(self.cm_host, username=self.user, password=self.passwd)
-
+        logger.info('Received; user -> %s, password -> %s, host -> %s', self.user, self.passwd, self.cm_host)
         for c in api.get_all_clusters():
             clusterInf = "Cluster name %s and version %s" %(c.name, c.version)
             #print "Cluster name %s and version %s" %(c.name, c.version)
