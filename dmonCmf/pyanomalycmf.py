@@ -39,7 +39,8 @@ class pyDmonCMFController:
                 cdh5 = c
         return cdh5, clusterInf
 
-    def getServiceInfo(self, service, cluster):
+    def getServiceInfo(self, serviceOrg, cluster):
+        service = serviceOrg.upper()
         supportedServices = ['HDFS', 'ZOOKEEPER', 'YARN', 'SPARK_ON_YARN']
         if service not in supportedServices:
             print "Unsupported service %s" %service
