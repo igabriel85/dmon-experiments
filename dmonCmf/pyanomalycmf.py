@@ -19,6 +19,7 @@ limitations under the License.
 
 from cm_api.api_client import ApiResource
 import sys
+import time
 from pyanomalyLogger import *
 
 
@@ -89,7 +90,7 @@ class pyDmonCMFController:
         print "Finished desired configuration changes for service %s" %service.name
         logger.info("Finished desired configuration changes for service %s", service.name)
 
-    def restartService(self, service):
+    def restartService(self, service, timeout=15):
         print 'Restarting %s at %s' %(service, datetime.datetime.now())
         logger.info('Restarting %s at %s', service, datetime.datetime.now())
         cmd = service.restart().wait()
