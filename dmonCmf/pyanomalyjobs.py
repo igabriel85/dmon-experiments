@@ -132,7 +132,7 @@ def main(argv):
                         for sk, sv in setService.iteritems():
                             print 'Selecting service %s for parameter changes' %sk
                             logger.info('Selecting service %s for parameter changes', sk)
-                            serviceObj = pyaCNF.getServiceInfo(sk, cdh5)
+                            serviceObj, n, st, h = pyaCNF.getServiceInfo(sk, cdh5)
                             logger.info('Changing service %s  parameter %s', sk, sv)
                             pyaCNF.setServiceConfiguration(serviceObj, sv)
                             rStatus = pyaCNF.restartService(serviceObj)
