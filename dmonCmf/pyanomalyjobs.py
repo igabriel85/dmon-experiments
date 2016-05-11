@@ -22,8 +22,36 @@ import json
 from pyanomalyConfig import *
 from pyanomalycmf import *
 import os.path
+import shutil
 import datetime
 import sys, getopt
+
+
+def moveFile(dirName):
+    '''
+    Creates a new directory and moves all files  to it with extension .err, .out and .log
+    :param dirName: name of the directory
+    '''
+    if os.path.isdir(dirName):
+        incr = int(dirName[-1])
+        newstr = dirName[:-1]
+        dirName = '%s%s' %(newstr, str(incr+1))
+        moveFile(dirName)
+    else:
+        os.makedirs(dirName)
+        wDir = os.getcwd()
+        source = os.listdir(wDir)
+        destination = dirName
+        for files in source:
+            print files
+            if files.endswith('.log'):
+                shutil.move(os.path.join(wDir, files), os.path.join(destination, files))
+            if files.endswith('.err'):
+                shutil.move(os.path.join(wDir, files), os.path.join(destination, files))
+            if files.endswith('.out'):
+                shutil.move(os.path.join(wDir, files), os.path.join(destination, files))
+
+
 
 
 def loadJsonDescriptor(descriptor):
@@ -164,7 +192,10 @@ def main(argv):
                         logger.info("Finished iteration %s for job %s from experiment %s at %s", i, e, k, datetime.datetime.now())
                 print "Finished experiment %s at %s" %(k, datetime.datetime.now())
                 logger.info("Finished experiment %s at %s", k, datetime.datetime.now())
-
+            destFolder = 'exp-1'
+            moveFile(destFolder)
+            print 'Moved exp files to folder'
+            logger.info('Moved exp files to folder')
 
 if __name__ == '__main__':
     main(sys.argv[1:])
