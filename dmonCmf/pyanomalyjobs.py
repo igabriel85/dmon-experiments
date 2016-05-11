@@ -164,6 +164,7 @@ def main(argv):
                             logger.info('Changing service %s  parameter %s', sk, sv)
                             pyaCNF.setServiceConfiguration(serviceObj, sv)
                             rStatus = pyaCNF.restartService(serviceObj)
+                            print rStatus
                             if not rStatus:
                                 logger.error('Error while starting service %s, exiting', sk)
                                 sys.exit('Error while starting service' +sk +'exiting')
