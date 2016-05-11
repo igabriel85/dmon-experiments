@@ -101,6 +101,7 @@ class pyDmonCMFController:
         if cmd.success:
             print "Restarted service %s at %s" %(service, datetime.datetime.now())
             logger.info("Restarted service %s at %s", service, datetime.datetime.now())
+            time.sleep(timeout)
             return 1
         else:
             print "Restart of service %s failed at %s" %(service, datetime.datetime.now())
@@ -108,8 +109,14 @@ class pyDmonCMFController:
             return 0
 
 
-    def restartCluster(self):
-        return "Restart entire cluster"
+    def restartCluster(self, cluster, timeout=15):
+        logger.info('Cluster %s stopping ...', cluster)
+        cluster.stop().wait()
+        logger.insto('Cluster %s stopped.', cluster)
+        logger.info('Cluster %s starting ...', cluster)
+        cluster.start().wait()
+        logger.info('Cluster %s started', cluster)
+        time.sleep(timeout)
 
 
 if __name__ == '__main__':

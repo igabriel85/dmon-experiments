@@ -166,7 +166,7 @@ def main(argv):
                             rStatus = pyaCNF.restartService(serviceObj)
                             if not rStatus:
                                 logger.error('Error while starting service %s, exiting', sk)
-                                sys.exit('Error while starting service %s, exiting', sk)
+                                sys.exit('Error while starting service' +sk +'exiting')
                             print 'Started service %s' %sk
                             logger.info('Started service %s', sk)
                     for i in range(0, e['cardinality']):
