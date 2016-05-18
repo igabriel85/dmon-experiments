@@ -52,6 +52,9 @@ def getYarnJobs(yhIP, yhPort):
     return rJobs.status_code, rJobs.json()
 
 def getYarnJobsStatistic(yhIP, yhPort, jDescriptor):
+    if jDescriptor['jobs'] is None:
+        print "No jobs found"
+        return 0
     jList = []
     for j in jDescriptor['jobs']['job']:
         jList.append(j['id'])
@@ -82,7 +85,6 @@ if __name__ == '__main__':
     print historyInfoResponse
 
     jStatus, jResponse = getYarnJobs(hServer, hPort)
-
 
     print jStatus
     print jResponse

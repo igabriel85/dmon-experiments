@@ -1,0 +1,810 @@
+-------------------------
+Parameters for zookeeper
+autopurgeSnapRetainCount
+<ApiConfig>: autopurgeSnapRetainCount = None
+zookeeper_canary_root_path
+<ApiConfig>: zookeeper_canary_root_path = None
+process_username
+<ApiConfig>: process_username = None
+log_event_retry_frequency
+<ApiConfig>: log_event_retry_frequency = None
+syncLimit
+<ApiConfig>: syncLimit = None
+service_config_suppression_server_count_validator
+<ApiConfig>: service_config_suppression_server_count_validator = None
+service_health_suppression_zookeeper_servers_healthy
+<ApiConfig>: service_health_suppression_zookeeper_servers_healthy = None
+autopurgeInterval
+<ApiConfig>: autopurgeInterval = None
+enableSecurity
+<ApiConfig>: enableSecurity = None
+service_health_suppression_zookeeper_canary_health
+<ApiConfig>: service_health_suppression_zookeeper_canary_health = None
+cleanupRetainCount
+<ApiConfig>: cleanupRetainCount = None
+zookeeper_canary_health_enabled
+<ApiConfig>: zookeeper_canary_health_enabled = None
+service_config_suppression_zookeeper_canary_root_path
+<ApiConfig>: service_config_suppression_zookeeper_canary_root_path = None
+service_config_suppression_zookeeper_env_safety_valve
+<ApiConfig>: service_config_suppression_zookeeper_env_safety_valve = None
+kerberos_princ_name
+<ApiConfig>: kerberos_princ_name = None
+zookeeper_canary_session_timeout
+<ApiConfig>: zookeeper_canary_session_timeout = None
+smon_derived_configs_safety_valve
+<ApiConfig>: smon_derived_configs_safety_valve = None
+jute_maxbuffer
+<ApiConfig>: jute_maxbuffer = None
+process_groupname
+<ApiConfig>: process_groupname = None
+enable_alerts
+<ApiConfig>: enable_alerts = None
+initLimit
+<ApiConfig>: initLimit = None
+service_config_suppression_service_triggers
+<ApiConfig>: service_config_suppression_service_triggers = None
+zookeeper_env_safety_valve
+<ApiConfig>: zookeeper_env_safety_valve = None
+zookeeper_canary_connection_timeout
+<ApiConfig>: zookeeper_canary_connection_timeout = None
+zookeeper_canary_operation_timeout
+<ApiConfig>: zookeeper_canary_operation_timeout = None
+service_triggers
+<ApiConfig>: service_triggers = None
+tickTime
+<ApiConfig>: tickTime = None
+catch_events
+<ApiConfig>: catch_events = None
+service_config_suppression_process_username
+<ApiConfig>: service_config_suppression_process_username = None
+enable_config_alerts
+<ApiConfig>: enable_config_alerts = None
+service_config_suppression_kerberos_princ_name
+<ApiConfig>: service_config_suppression_kerberos_princ_name = None
+zookeeper_servers_healthy_thresholds
+<ApiConfig>: zookeeper_servers_healthy_thresholds = None
+service_config_suppression_process_groupname
+<ApiConfig>: service_config_suppression_process_groupname = None
+service_config_suppression_zookeeper_odd_number_of_servers_validator
+<ApiConfig>: service_config_suppression_zookeeper_odd_number_of_servers_validator = None
+leaderServes
+<ApiConfig>: leaderServes = None
+service_config_suppression_smon_derived_configs_safety_valve
+<ApiConfig>: service_config_suppression_smon_derived_configs_safety_valve = None
+zookeeper_datadir_autocreate
+<ApiConfig>: zookeeper_datadir_autocreate = None
+-------------------------
+-------------------------
+Parameters for hdfs
+service_config_suppression_core_site_safety_valve
+<ApiConfig>: service_config_suppression_core_site_safety_valve = None
+service_config_suppression_navigator_client_config_safety_valve
+<ApiConfig>: service_config_suppression_navigator_client_config_safety_valve = None
+dfs_ha_fencing_methods
+<ApiConfig>: dfs_ha_fencing_methods = None
+navigator_client_max_num_audit_log
+<ApiConfig>: navigator_client_max_num_audit_log = None
+navigator_audit_log_max_file_size
+<ApiConfig>: navigator_audit_log_max_file_size = None
+service_config_suppression_yarn_proxy_user_groups_list
+<ApiConfig>: service_config_suppression_yarn_proxy_user_groups_list = None
+service_config_suppression_hdfs_shell_cmd_env_safety_valve
+<ApiConfig>: service_config_suppression_hdfs_shell_cmd_env_safety_valve = None
+service_config_suppression_dfs_ha_proxy_provider
+<ApiConfig>: service_config_suppression_dfs_ha_proxy_provider = None
+dfs_permissions
+<ApiConfig>: dfs_permissions = None
+service_config_suppression_hdfs_service_env_safety_valve
+<ApiConfig>: service_config_suppression_hdfs_service_env_safety_valve = None
+process_username
+<ApiConfig>: process_username = None
+hue_proxy_user_groups_list
+<ApiConfig>: hue_proxy_user_groups_list = None
+hadoop_group_mapping_ldap_keystore_passwd
+<ApiConfig>: hadoop_group_mapping_ldap_keystore_passwd = None
+service_config_suppression_flume_proxy_user_groups_list
+<ApiConfig>: service_config_suppression_flume_proxy_user_groups_list = None
+service_config_suppression_failovercontroller_count_validator
+<ApiConfig>: service_config_suppression_failovercontroller_count_validator = None
+service_config_suppression_kerberos_princ_name
+<ApiConfig>: service_config_suppression_kerberos_princ_name = None
+service_config_suppression_hue_kerberos_principal_shortname
+<ApiConfig>: service_config_suppression_hue_kerberos_principal_shortname = None
+service_config_suppression_oozie_proxy_user_groups_list
+<ApiConfig>: service_config_suppression_oozie_proxy_user_groups_list = None
+service_config_suppression_hadoop_authorized_admin_users
+<ApiConfig>: service_config_suppression_hadoop_authorized_admin_users = None
+service_config_suppression_hdfs_replication_env_safety_valve
+<ApiConfig>: service_config_suppression_hdfs_replication_env_safety_valve = None
+firehose_hdfs_canary_directory
+<ApiConfig>: firehose_hdfs_canary_directory = None
+audit_event_log_dir
+<ApiConfig>: audit_event_log_dir = None
+hadoop_security_group_mapping
+<ApiConfig>: hadoop_security_group_mapping = None
+service_config_suppression_hadoop_http_auth_cookie_domain
+<ApiConfig>: service_config_suppression_hadoop_http_auth_cookie_domain = None
+yarn_proxy_user_groups_list
+<ApiConfig>: yarn_proxy_user_groups_list = None
+service_config_suppression_namenode_count_validator
+<ApiConfig>: service_config_suppression_namenode_count_validator = None
+oozie_proxy_user_groups_list
+<ApiConfig>: oozie_proxy_user_groups_list = None
+service_config_suppression_http_proxy_user_groups_list
+<ApiConfig>: service_config_suppression_http_proxy_user_groups_list = None
+hadoop_authorized_users
+<ApiConfig>: hadoop_authorized_users = None
+service_config_suppression_hadoop_ssl_validator
+<ApiConfig>: service_config_suppression_hadoop_ssl_validator = None
+dfs_datanode_read_shortcircuit
+<ApiConfig>: dfs_datanode_read_shortcircuit = None
+service_config_suppression_navigator_event_tracker
+<ApiConfig>: service_config_suppression_navigator_event_tracker = None
+hadoop_group_mapping_ldap_bind_user
+<ApiConfig>: hadoop_group_mapping_ldap_bind_user = None
+enable_alerts
+<ApiConfig>: enable_alerts = None
+service_config_suppression_balancer_count_validator
+<ApiConfig>: service_config_suppression_balancer_count_validator = None
+ssl_client_truststore_password
+<ApiConfig>: ssl_client_truststore_password = None
+service_config_suppression_hadoop_group_mapping_ldap_bind_user
+<ApiConfig>: service_config_suppression_hadoop_group_mapping_ldap_bind_user = None
+hadoop_group_mapping_ldap_bind_passwd
+<ApiConfig>: hadoop_group_mapping_ldap_bind_passwd = None
+navigator_audit_queue_policy
+<ApiConfig>: navigator_audit_queue_policy = None
+service_config_suppression_nameservice_mountpoints_validator
+<ApiConfig>: service_config_suppression_nameservice_mountpoints_validator = None
+catch_events
+<ApiConfig>: catch_events = None
+service_config_suppression_hadoop_group_mapping_ldap_base
+<ApiConfig>: service_config_suppression_hadoop_group_mapping_ldap_base = None
+service_config_suppression_short_circuit_read_validator
+<ApiConfig>: service_config_suppression_short_circuit_read_validator = None
+redaction_policy_enabled
+<ApiConfig>: redaction_policy_enabled = None
+core_site_safety_valve
+<ApiConfig>: core_site_safety_valve = None
+service_config_suppression_gateway_count_validator
+<ApiConfig>: service_config_suppression_gateway_count_validator = None
+service_config_suppression_hdfs_authentication_and_authorization_validator
+<ApiConfig>: service_config_suppression_hdfs_authentication_and_authorization_validator = None
+service_config_suppression_smon_proxy_user_groups_list
+<ApiConfig>: service_config_suppression_smon_proxy_user_groups_list = None
+service_config_suppression_dfs_block_local_path_access_user
+<ApiConfig>: service_config_suppression_dfs_block_local_path_access_user = None
+service_config_suppression_process_groupname
+<ApiConfig>: service_config_suppression_process_groupname = None
+hdfs_datanodes_healthy_thresholds
+<ApiConfig>: hdfs_datanodes_healthy_thresholds = None
+service_config_suppression_dfs_ha_fencing_ssh_private_key_files
+<ApiConfig>: service_config_suppression_dfs_ha_fencing_ssh_private_key_files = None
+service_config_suppression_datanode_count_validator
+<ApiConfig>: service_config_suppression_datanode_count_validator = None
+hue_kerberos_principal_shortname
+<ApiConfig>: hue_kerberos_principal_shortname = None
+service_config_suppression_hadoop_group_mapping_ldap_group_filter
+<ApiConfig>: service_config_suppression_hadoop_group_mapping_ldap_group_filter = None
+http_logs_enabled
+<ApiConfig>: http_logs_enabled = None
+smon_derived_configs_safety_valve
+<ApiConfig>: smon_derived_configs_safety_valve = None
+dfs_ha_proxy_provider
+<ApiConfig>: dfs_ha_proxy_provider = None
+hadoop_http_auth_cookie_domain
+<ApiConfig>: hadoop_http_auth_cookie_domain = None
+service_config_suppression_ssl_server_keystore_location
+<ApiConfig>: service_config_suppression_ssl_server_keystore_location = None
+hadoop_group_mapping_ldap_base
+<ApiConfig>: hadoop_group_mapping_ldap_base = None
+hdfs_proxy_user_hosts_list
+<ApiConfig>: hdfs_proxy_user_hosts_list = None
+service_config_suppression_nfsgateway_count_validator
+<ApiConfig>: service_config_suppression_nfsgateway_count_validator = None
+service_health_suppression_hdfs_blocks_with_corrupt_replicas
+<ApiConfig>: service_health_suppression_hdfs_blocks_with_corrupt_replicas = None
+navigator_audit_event_filter
+<ApiConfig>: navigator_audit_event_filter = None
+hadoop_authorized_groups
+<ApiConfig>: hadoop_authorized_groups = None
+dfs_encrypt_data_transfer_cipher_keybits
+<ApiConfig>: dfs_encrypt_data_transfer_cipher_keybits = None
+ssl_server_keystore_keypassword
+<ApiConfig>: ssl_server_keystore_keypassword = None
+hive_proxy_user_groups_list
+<ApiConfig>: hive_proxy_user_groups_list = None
+oozie_proxy_user_hosts_list
+<ApiConfig>: oozie_proxy_user_hosts_list = None
+service_health_suppression_hdfs_free_space_remaining
+<ApiConfig>: service_health_suppression_hdfs_free_space_remaining = None
+smon_proxy_user_hosts_list
+<ApiConfig>: smon_proxy_user_hosts_list = None
+hdfs_sentry_sync_path_prefixes
+<ApiConfig>: hdfs_sentry_sync_path_prefixes = None
+mapred_proxy_user_groups_list
+<ApiConfig>: mapred_proxy_user_groups_list = None
+hdfs_service_env_safety_valve
+<ApiConfig>: hdfs_service_env_safety_valve = None
+sentry_authorization_provider_hdfs_group
+<ApiConfig>: sentry_authorization_provider_hdfs_group = None
+extra_auth_to_local_rules
+<ApiConfig>: extra_auth_to_local_rules = None
+ssl_server_keystore_password
+<ApiConfig>: ssl_server_keystore_password = None
+dfs_webhdfs_enabled
+<ApiConfig>: dfs_webhdfs_enabled = None
+service_config_suppression_hadoop_policy_config_safety_valve
+<ApiConfig>: service_config_suppression_hadoop_policy_config_safety_valve = None
+service_config_suppression_hdfs_encryption_validator
+<ApiConfig>: service_config_suppression_hdfs_encryption_validator = None
+service_config_suppression_hdfs_service_config_safety_valve
+<ApiConfig>: service_config_suppression_hdfs_service_config_safety_valve = None
+hadoop_secure_web_ui
+<ApiConfig>: hadoop_secure_web_ui = None
+hdfs_replication_haoop_env_sh_safety_valve
+<ApiConfig>: hdfs_replication_haoop_env_sh_safety_valve = None
+hdfs_proxy_user_groups_list
+<ApiConfig>: hdfs_proxy_user_groups_list = None
+hadoop_rpc_protection
+<ApiConfig>: hadoop_rpc_protection = None
+service_config_suppression_hue_proxy_user_hosts_list
+<ApiConfig>: service_config_suppression_hue_proxy_user_hosts_list = None
+ssl_client_truststore_location
+<ApiConfig>: ssl_client_truststore_location = None
+hadoop_authorized_admin_users
+<ApiConfig>: hadoop_authorized_admin_users = None
+hdfs_missing_blocks_thresholds
+<ApiConfig>: hdfs_missing_blocks_thresholds = None
+hdfs_namenode_activation_startup_tolerance
+<ApiConfig>: hdfs_namenode_activation_startup_tolerance = None
+redaction_policy
+<ApiConfig>: redaction_policy = None
+yarn_proxy_user_hosts_list
+<ApiConfig>: yarn_proxy_user_hosts_list = None
+httpfs_proxy_user_groups_list
+<ApiConfig>: httpfs_proxy_user_groups_list = None
+flume_proxy_user_groups_list
+<ApiConfig>: flume_proxy_user_groups_list = None
+mapred_proxy_user_hosts_list
+<ApiConfig>: mapred_proxy_user_hosts_list = None
+hue_proxy_user_hosts_list
+<ApiConfig>: hue_proxy_user_hosts_list = None
+smon_client_config_overrides
+<ApiConfig>: smon_client_config_overrides = None
+service_triggers
+<ApiConfig>: service_triggers = None
+service_config_suppression_hdfs_proxy_user_groups_list
+<ApiConfig>: service_config_suppression_hdfs_proxy_user_groups_list = None
+service_config_suppression_process_username
+<ApiConfig>: service_config_suppression_process_username = None
+hdfs_hadoop_ssl_enabled
+<ApiConfig>: hdfs_hadoop_ssl_enabled = None
+trusted_realms
+<ApiConfig>: trusted_realms = None
+service_health_suppression_hdfs_failover_controllers_healthy
+<ApiConfig>: service_health_suppression_hdfs_failover_controllers_healthy = None
+service_config_suppression_smon_proxy_user_hosts_list
+<ApiConfig>: service_config_suppression_smon_proxy_user_hosts_list = None
+dfs_client_use_datanode_hostname
+<ApiConfig>: dfs_client_use_datanode_hostname = None
+failover_controllers_healthy_enabled
+<ApiConfig>: failover_controllers_healthy_enabled = None
+hadoop_group_mapping_ldap_member_attr
+<ApiConfig>: hadoop_group_mapping_ldap_member_attr = None
+dfs_block_local_path_access_user
+<ApiConfig>: dfs_block_local_path_access_user = None
+dfs_ha_fencing_cloudera_manager_timeout_millis
+<ApiConfig>: dfs_ha_fencing_cloudera_manager_timeout_millis = None
+navigator_audit_enabled
+<ApiConfig>: navigator_audit_enabled = None
+dfs_image_transfer_bandwidthPerSec
+<ApiConfig>: dfs_image_transfer_bandwidthPerSec = None
+service_config_suppression_mapred_proxy_user_groups_list
+<ApiConfig>: service_config_suppression_mapred_proxy_user_groups_list = None
+hdfs_user_to_impersonate
+<ApiConfig>: hdfs_user_to_impersonate = None
+hadoop_group_mapping_ldap_keystore
+<ApiConfig>: hadoop_group_mapping_ldap_keystore = None
+service_config_suppression_hdfs_sentry_sync_path_prefixes
+<ApiConfig>: service_config_suppression_hdfs_sentry_sync_path_prefixes = None
+service_config_suppression_navigator_audit_event_filter
+<ApiConfig>: service_config_suppression_navigator_audit_event_filter = None
+service_config_suppression_ssl_client_truststore_password
+<ApiConfig>: service_config_suppression_ssl_client_truststore_password = None
+dfs_permissions_supergroup
+<ApiConfig>: dfs_permissions_supergroup = None
+service_config_suppression_hadoop_group_mapping_ldap_url
+<ApiConfig>: service_config_suppression_hadoop_group_mapping_ldap_url = None
+smon_proxy_user_groups_list
+<ApiConfig>: smon_proxy_user_groups_list = None
+service_config_suppression_hadoop_authorized_groups
+<ApiConfig>: service_config_suppression_hadoop_authorized_groups = None
+service_config_suppression_httpfs_proxy_user_hosts_list
+<ApiConfig>: service_config_suppression_httpfs_proxy_user_hosts_list = None
+dfs_replication_min
+<ApiConfig>: dfs_replication_min = None
+hdfs_free_space_thresholds
+<ApiConfig>: hdfs_free_space_thresholds = None
+service_config_suppression_hdfs_hadoop_group_name
+<ApiConfig>: service_config_suppression_hdfs_hadoop_group_name = None
+service_config_suppression_ssl_server_keystore_password
+<ApiConfig>: service_config_suppression_ssl_server_keystore_password = None
+service_config_suppression_single_user_mode_override_validator
+<ApiConfig>: service_config_suppression_single_user_mode_override_validator = None
+dfs_replication_max
+<ApiConfig>: dfs_replication_max = None
+service_config_suppression_smon_client_config_overrides
+<ApiConfig>: service_config_suppression_smon_client_config_overrides = None
+HTTP_proxy_user_hosts_list
+<ApiConfig>: HTTP_proxy_user_hosts_list = None
+firehose_hdfs_canary_directory_permissions
+<ApiConfig>: firehose_hdfs_canary_directory_permissions = None
+hadoop_security_authorization
+<ApiConfig>: hadoop_security_authorization = None
+kms_service
+<ApiConfig>: kms_service = None
+hadoop_group_mapping_ldap_group_name_attr
+<ApiConfig>: hadoop_group_mapping_ldap_group_name_attr = None
+dfs_datanode_hdfs_blocks_metadata_enabled
+<ApiConfig>: dfs_datanode_hdfs_blocks_metadata_enabled = None
+service_config_suppression_httpfs_proxy_user_groups_list
+<ApiConfig>: service_config_suppression_httpfs_proxy_user_groups_list = None
+hdfs_active_namenode_detecton_window
+<ApiConfig>: hdfs_active_namenode_detecton_window = None
+service_config_suppression_flume_proxy_user_hosts_list
+<ApiConfig>: service_config_suppression_flume_proxy_user_hosts_list = None
+dfs_replication
+<ApiConfig>: dfs_replication = None
+HTTP_proxy_user_groups_list
+<ApiConfig>: HTTP_proxy_user_groups_list = None
+hdfs_hadoop_group_name
+<ApiConfig>: hdfs_hadoop_group_name = None
+service_config_suppression_hadoop_group_mapping_ldap_user_filter
+<ApiConfig>: service_config_suppression_hadoop_group_mapping_ldap_user_filter = None
+service_config_suppression_dfs_ha_fencing_methods
+<ApiConfig>: service_config_suppression_dfs_ha_fencing_methods = None
+service_config_suppression_hive_proxy_user_hosts_list
+<ApiConfig>: service_config_suppression_hive_proxy_user_hosts_list = None
+service_config_suppression_dfs_permissions_supergroup
+<ApiConfig>: service_config_suppression_dfs_permissions_supergroup = None
+hdfs_shell_cmd_env_safety_valve
+<ApiConfig>: hdfs_shell_cmd_env_safety_valve = None
+service_config_suppression_service_triggers
+<ApiConfig>: service_config_suppression_service_triggers = None
+service_config_suppression_io_compression_codecs
+<ApiConfig>: service_config_suppression_io_compression_codecs = None
+hadoop_group_mapping_ldap_user_filter
+<ApiConfig>: hadoop_group_mapping_ldap_user_filter = None
+ssl_server_keystore_location
+<ApiConfig>: ssl_server_keystore_location = None
+service_config_suppression_journalnode_count_validator
+<ApiConfig>: service_config_suppression_journalnode_count_validator = None
+service_config_suppression_hdfs_proxy_user_hosts_list
+<ApiConfig>: service_config_suppression_hdfs_proxy_user_hosts_list = None
+service_config_suppression_firehose_hdfs_canary_directory_permissions
+<ApiConfig>: service_config_suppression_firehose_hdfs_canary_directory_permissions = None
+navigator_event_tracker
+<ApiConfig>: navigator_event_tracker = None
+service_config_suppression_firehose_hdfs_canary_directory
+<ApiConfig>: service_config_suppression_firehose_hdfs_canary_directory = None
+hdfs_replication_env_safety_valve
+<ApiConfig>: hdfs_replication_env_safety_valve = None
+dfs_block_size
+<ApiConfig>: dfs_block_size = None
+service_config_suppression_hue_proxy_user_groups_list
+<ApiConfig>: service_config_suppression_hue_proxy_user_groups_list = None
+service_config_suppression_hadoop_group_mapping_ldap_keystore_passwd
+<ApiConfig>: service_config_suppression_hadoop_group_mapping_ldap_keystore_passwd = None
+dfs_domain_socket_path
+<ApiConfig>: dfs_domain_socket_path = None
+service_config_suppression_hdfs_user_home_dir
+<ApiConfig>: service_config_suppression_hdfs_user_home_dir = None
+dfs_encrypt_data_transfer_algorithm
+<ApiConfig>: dfs_encrypt_data_transfer_algorithm = None
+hdfs_under_replicated_blocks_thresholds
+<ApiConfig>: hdfs_under_replicated_blocks_thresholds = None
+service_health_suppression_hdfs_data_nodes_healthy
+<ApiConfig>: service_health_suppression_hdfs_data_nodes_healthy = None
+hdfs_service_config_safety_valve
+<ApiConfig>: hdfs_service_config_safety_valve = None
+service_config_suppression_yarn_proxy_user_hosts_list
+<ApiConfig>: service_config_suppression_yarn_proxy_user_hosts_list = None
+service_health_suppression_hdfs_canary_health
+<ApiConfig>: service_health_suppression_hdfs_canary_health = None
+dfs_encrypt_data_transfer
+<ApiConfig>: dfs_encrypt_data_transfer = None
+service_config_suppression_hdfs_ssl_client_safety_valve
+<ApiConfig>: service_config_suppression_hdfs_ssl_client_safety_valve = None
+service_config_suppression_httpfs_count_validator
+<ApiConfig>: service_config_suppression_httpfs_count_validator = None
+service_config_suppression_secondarynamenode_count_validator
+<ApiConfig>: service_config_suppression_secondarynamenode_count_validator = None
+dfs_client_file_block_storage_locations_timeout
+<ApiConfig>: dfs_client_file_block_storage_locations_timeout = None
+service_config_suppression_sentry_authorization_provider_hdfs_group
+<ApiConfig>: service_config_suppression_sentry_authorization_provider_hdfs_group = None
+io_compression_codecs
+<ApiConfig>: io_compression_codecs = None
+service_config_suppression_hadoop_group_mapping_ldap_member_attr
+<ApiConfig>: service_config_suppression_hadoop_group_mapping_ldap_member_attr = None
+service_config_suppression_nameservice_namenodes_heap_size_validator
+<ApiConfig>: service_config_suppression_nameservice_namenodes_heap_size_validator = None
+hadoop_security_authentication
+<ApiConfig>: hadoop_security_authentication = None
+service_config_suppression_dfs_replication
+<ApiConfig>: service_config_suppression_dfs_replication = None
+hadoop_policy_config_safety_valve
+<ApiConfig>: hadoop_policy_config_safety_valve = None
+service_config_suppression_redaction_policy
+<ApiConfig>: service_config_suppression_redaction_policy = None
+service_config_suppression_hadoop_group_mapping_ldap_bind_passwd
+<ApiConfig>: service_config_suppression_hadoop_group_mapping_ldap_bind_passwd = None
+hdfs_namenode_health_enabled
+<ApiConfig>: hdfs_namenode_health_enabled = None
+hdfs_ssl_server_safety_valve
+<ApiConfig>: hdfs_ssl_server_safety_valve = None
+hdfs_user_home_dir
+<ApiConfig>: hdfs_user_home_dir = None
+service_health_suppression_hdfs_missing_blocks
+<ApiConfig>: service_health_suppression_hdfs_missing_blocks = None
+dfs_data_transfer_protection
+<ApiConfig>: dfs_data_transfer_protection = None
+service_config_suppression_hadoop_authorized_users
+<ApiConfig>: service_config_suppression_hadoop_authorized_users = None
+flume_proxy_user_hosts_list
+<ApiConfig>: flume_proxy_user_hosts_list = None
+hadoop_group_mapping_ldap_url
+<ApiConfig>: hadoop_group_mapping_ldap_url = None
+dfs_ha_fencing_ssh_connect_timeout
+<ApiConfig>: dfs_ha_fencing_ssh_connect_timeout = None
+hdfs_sentry_sync_enable
+<ApiConfig>: hdfs_sentry_sync_enable = None
+httpfs_proxy_user_hosts_list
+<ApiConfig>: httpfs_proxy_user_hosts_list = None
+enable_config_alerts
+<ApiConfig>: enable_config_alerts = None
+zookeeper_service
+<ApiConfig>: zookeeper_service = zookeeper
+service_config_suppression_smon_derived_configs_safety_valve
+<ApiConfig>: service_config_suppression_smon_derived_configs_safety_valve = None
+service_config_suppression_hadoop_authorized_admin_groups
+<ApiConfig>: service_config_suppression_hadoop_authorized_admin_groups = None
+service_config_suppression_mapred_proxy_user_hosts_list
+<ApiConfig>: service_config_suppression_mapred_proxy_user_hosts_list = None
+dfs_image_transfer_timeout
+<ApiConfig>: dfs_image_transfer_timeout = None
+service_config_suppression_auto_failover_validator
+<ApiConfig>: service_config_suppression_auto_failover_validator = None
+kerberos_princ_name
+<ApiConfig>: kerberos_princ_name = None
+service_config_suppression_nameservice_checkpoint_configuration_validator
+<ApiConfig>: service_config_suppression_nameservice_checkpoint_configuration_validator = None
+service_config_suppression_oozie_proxy_user_hosts_list
+<ApiConfig>: service_config_suppression_oozie_proxy_user_hosts_list = None
+service_config_suppression_http_proxy_user_hosts_list
+<ApiConfig>: service_config_suppression_http_proxy_user_hosts_list = None
+process_groupname
+<ApiConfig>: process_groupname = None
+dfs_namenode_acls_enabled
+<ApiConfig>: dfs_namenode_acls_enabled = None
+service_config_suppression_trusted_realms
+<ApiConfig>: service_config_suppression_trusted_realms = None
+service_config_suppression_nfs_ha_validator
+<ApiConfig>: service_config_suppression_nfs_ha_validator = None
+log_event_retry_frequency
+<ApiConfig>: log_event_retry_frequency = None
+service_health_suppression_hdfs_ha_namenode_health
+<ApiConfig>: service_health_suppression_hdfs_ha_namenode_health = None
+hive_proxy_user_hosts_list
+<ApiConfig>: hive_proxy_user_hosts_list = None
+dfs_umaskmode
+<ApiConfig>: dfs_umaskmode = None
+service_config_suppression_dfs_domain_socket_path
+<ApiConfig>: service_config_suppression_dfs_domain_socket_path = None
+service_config_suppression_hdfs_user_to_impersonate
+<ApiConfig>: service_config_suppression_hdfs_user_to_impersonate = None
+service_config_suppression_hive_proxy_user_groups_list
+<ApiConfig>: service_config_suppression_hive_proxy_user_groups_list = None
+service_config_suppression_audit_event_log_dir
+<ApiConfig>: service_config_suppression_audit_event_log_dir = None
+hdfs_canary_health_enabled
+<ApiConfig>: hdfs_canary_health_enabled = None
+hdfs_blocks_with_corrupt_replicas_thresholds
+<ApiConfig>: hdfs_blocks_with_corrupt_replicas_thresholds = None
+hadoop_authorized_admin_groups
+<ApiConfig>: hadoop_authorized_admin_groups = None
+hadoop_group_mapping_ldap_group_filter
+<ApiConfig>: hadoop_group_mapping_ldap_group_filter = None
+service_config_suppression_extra_auth_to_local_rules
+<ApiConfig>: service_config_suppression_extra_auth_to_local_rules = None
+service_config_suppression_ssl_client_truststore_location
+<ApiConfig>: service_config_suppression_ssl_client_truststore_location = None
+service_config_suppression_hdfs_ssl_server_safety_valve
+<ApiConfig>: service_config_suppression_hdfs_ssl_server_safety_valve = None
+service_health_suppression_hdfs_under_replicated_blocks
+<ApiConfig>: service_health_suppression_hdfs_under_replicated_blocks = None
+navigator_client_config_safety_valve
+<ApiConfig>: navigator_client_config_safety_valve = None
+service_config_suppression_hadoop_group_mapping_ldap_group_name_attr
+<ApiConfig>: service_config_suppression_hadoop_group_mapping_ldap_group_name_attr = None
+hdfs_standby_namenodes_health_enabled
+<ApiConfig>: hdfs_standby_namenodes_health_enabled = None
+dfs_ha_fencing_ssh_private_key_files
+<ApiConfig>: dfs_ha_fencing_ssh_private_key_files = None
+service_config_suppression_hdfs_replication_haoop_env_sh_safety_valve
+<ApiConfig>: service_config_suppression_hdfs_replication_haoop_env_sh_safety_valve = None
+hadoop_group_mapping_ldap_use_ssl
+<ApiConfig>: hadoop_group_mapping_ldap_use_ssl = None
+service_config_suppression_ssl_server_keystore_keypassword
+<ApiConfig>: service_config_suppression_ssl_server_keystore_keypassword = None
+service_config_suppression_hadoop_group_mapping_ldap_keystore
+<ApiConfig>: service_config_suppression_hadoop_group_mapping_ldap_keystore = None
+hdfs_ssl_client_safety_valve
+<ApiConfig>: hdfs_ssl_client_safety_valve = None
+service_config_suppression_redaction_policy_validator
+<ApiConfig>: service_config_suppression_redaction_policy_validator = None
+-------------------------
+-------------------------
+Parameters for yarn
+yarn_nodemanagers_healthy_thresholds
+<ApiConfig>: yarn_nodemanagers_healthy_thresholds = None
+yarn_application_classpath
+<ApiConfig>: yarn_application_classpath = None
+service_config_suppression_yarn_service_replication_config_safety_valve
+<ApiConfig>: service_config_suppression_yarn_service_replication_config_safety_valve = None
+process_username
+<ApiConfig>: process_username = None
+hdfs_service
+<ApiConfig>: hdfs_service = hdfs
+service_health_suppression_yarn_resourcemanagers_health
+<ApiConfig>: service_health_suppression_yarn_resourcemanagers_health = None
+service_config_suppression_cm_yarn_container_usage_output_dir
+<ApiConfig>: service_config_suppression_cm_yarn_container_usage_output_dir = None
+yarn_active_resourcemanager_detecton_window
+<ApiConfig>: yarn_active_resourcemanager_detecton_window = None
+service_config_suppression_jobhistory_count_validator
+<ApiConfig>: service_config_suppression_jobhistory_count_validator = None
+yarn_resourcemanager_activation_startup_tolerance
+<ApiConfig>: yarn_resourcemanager_activation_startup_tolerance = None
+yarn_standby_resourcemanager_health_enabled
+<ApiConfig>: yarn_standby_resourcemanager_health_enabled = None
+yarn_acl_enable
+<ApiConfig>: yarn_acl_enable = None
+service_config_suppression_hadoop_ssl_validator
+<ApiConfig>: service_config_suppression_hadoop_ssl_validator = None
+cm_yarn_container_usage_job_pool
+<ApiConfig>: cm_yarn_container_usage_job_pool = None
+yarn_hadoop_policy_config_safety_valve
+<ApiConfig>: yarn_hadoop_policy_config_safety_valve = None
+cm_yarn_container_usage_input_dir
+<ApiConfig>: cm_yarn_container_usage_input_dir = None
+service_config_suppression_yarn_application_classpath
+<ApiConfig>: service_config_suppression_yarn_application_classpath = None
+enable_alerts
+<ApiConfig>: enable_alerts = None
+service_config_suppression_nodemanager_count_validator
+<ApiConfig>: service_config_suppression_nodemanager_count_validator = None
+ssl_client_truststore_password
+<ApiConfig>: ssl_client_truststore_password = None
+service_config_suppression_service_triggers
+<ApiConfig>: service_config_suppression_service_triggers = None
+yarn_core_site_safety_valve
+<ApiConfig>: yarn_core_site_safety_valve = None
+catch_events
+<ApiConfig>: catch_events = None
+service_config_suppression_kerberos_princ_name
+<ApiConfig>: service_config_suppression_kerberos_princ_name = None
+service_config_suppression_gateway_count_validator
+<ApiConfig>: service_config_suppression_gateway_count_validator = None
+service_config_suppression_process_groupname
+<ApiConfig>: service_config_suppression_process_groupname = None
+service_config_suppression_mapreduce_service_replication_config_safety_valve
+<ApiConfig>: service_config_suppression_mapreduce_service_replication_config_safety_valve = None
+service_config_suppression_yarn_service_env_safety_valve
+<ApiConfig>: service_config_suppression_yarn_service_env_safety_valve = None
+service_config_suppression_cm_yarn_container_usage_job_pool
+<ApiConfig>: service_config_suppression_cm_yarn_container_usage_job_pool = None
+smon_derived_configs_safety_valve
+<ApiConfig>: smon_derived_configs_safety_valve = None
+service_config_suppression_ssl_server_keystore_location
+<ApiConfig>: service_config_suppression_ssl_server_keystore_location = None
+yarn_fs_scheduled_allocations
+<ApiConfig>: yarn_fs_scheduled_allocations = None
+user_application_list_settings
+<ApiConfig>: user_application_list_settings = None
+yarn_jobhistoryserver_health_enabled
+<ApiConfig>: yarn_jobhistoryserver_health_enabled = None
+ssl_server_keystore_keypassword
+<ApiConfig>: ssl_server_keystore_keypassword = None
+service_config_suppression_yarn_hadoop_policy_config_safety_valve
+<ApiConfig>: service_config_suppression_yarn_hadoop_policy_config_safety_valve = None
+yarn_container_seconds_per_sample
+<ApiConfig>: yarn_container_seconds_per_sample = None
+ssl_server_keystore_password
+<ApiConfig>: ssl_server_keystore_password = None
+service_health_suppression_yarn_jobhistory_health
+<ApiConfig>: service_health_suppression_yarn_jobhistory_health = None
+hadoop_secure_web_ui
+<ApiConfig>: hadoop_secure_web_ui = None
+ssl_client_truststore_location
+<ApiConfig>: ssl_client_truststore_location = None
+service_config_suppression_cm_yarn_container_usage_job_user
+<ApiConfig>: service_config_suppression_cm_yarn_container_usage_job_user = None
+service_config_suppression_smon_client_config_overrides
+<ApiConfig>: service_config_suppression_smon_client_config_overrides = None
+smon_client_config_overrides
+<ApiConfig>: smon_client_config_overrides = None
+yarn_service_config_safety_valve
+<ApiConfig>: yarn_service_config_safety_valve = None
+service_config_suppression_process_username
+<ApiConfig>: service_config_suppression_process_username = None
+service_health_suppression_yarn_usage_aggregation_health
+<ApiConfig>: service_health_suppression_yarn_usage_aggregation_health = None
+cm_yarn_container_usage_job_user
+<ApiConfig>: cm_yarn_container_usage_job_user = None
+yarn_service_replication_config_safety_valve
+<ApiConfig>: yarn_service_replication_config_safety_valve = None
+cm_yarn_container_usage_job_num_reduce_tasks
+<ApiConfig>: cm_yarn_container_usage_job_num_reduce_tasks = None
+yarn_service_env_safety_valve
+<ApiConfig>: yarn_service_env_safety_valve = None
+yarn_log_aggregation_enable
+<ApiConfig>: yarn_log_aggregation_enable = None
+service_config_suppression_cm_yarn_container_usage_input_dir
+<ApiConfig>: service_config_suppression_cm_yarn_container_usage_input_dir = None
+service_config_suppression_yarn_ssl_client_safety_valve
+<ApiConfig>: service_config_suppression_yarn_ssl_client_safety_valve = None
+yarn_admin_acl
+<ApiConfig>: yarn_admin_acl = None
+service_config_suppression_ssl_client_truststore_password
+<ApiConfig>: service_config_suppression_ssl_client_truststore_password = None
+yarn_rm_ha_cluster_id
+<ApiConfig>: yarn_rm_ha_cluster_id = None
+service_triggers
+<ApiConfig>: service_triggers = None
+cm_yarn_enable_container_usage_aggregation
+<ApiConfig>: cm_yarn_enable_container_usage_aggregation = None
+yarn_ssl_server_safety_valve
+<ApiConfig>: yarn_ssl_server_safety_valve = None
+service_config_suppression_llama_proxy_user_hosts_list
+<ApiConfig>: service_config_suppression_llama_proxy_user_hosts_list = None
+yarn_scheduler_fair_allow_undeclared_pools
+<ApiConfig>: yarn_scheduler_fair_allow_undeclared_pools = None
+yarn_log_aggregation_retain_seconds
+<ApiConfig>: yarn_log_aggregation_retain_seconds = None
+service_config_suppression_yarn_service_mapred_safety_valve
+<ApiConfig>: service_config_suppression_yarn_service_mapred_safety_valve = None
+service_config_suppression_yarn_ssl_server_safety_valve
+<ApiConfig>: service_config_suppression_yarn_ssl_server_safety_valve = None
+ssl_server_keystore_location
+<ApiConfig>: ssl_server_keystore_location = None
+service_config_suppression_llama_proxy_user_groups_list
+<ApiConfig>: service_config_suppression_llama_proxy_user_groups_list = None
+service_config_suppression_ssl_server_keystore_password
+<ApiConfig>: service_config_suppression_ssl_server_keystore_password = None
+yarn_service_lce_always
+<ApiConfig>: yarn_service_lce_always = None
+http_logs_enabled
+<ApiConfig>: http_logs_enabled = None
+service_config_suppression_hdfs_user_home_dir
+<ApiConfig>: service_config_suppression_hdfs_user_home_dir = None
+yarn_nodemanager_linux_container_executor_nonsecure_mode_local_user
+<ApiConfig>: yarn_nodemanager_linux_container_executor_nonsecure_mode_local_user = None
+yarn_service_mapred_safety_valve
+<ApiConfig>: yarn_service_mapred_safety_valve = None
+llama_proxy_user_hosts_list
+<ApiConfig>: llama_proxy_user_hosts_list = None
+service_config_suppression_resourcemanager_count_validator
+<ApiConfig>: service_config_suppression_resourcemanager_count_validator = None
+service_config_suppression_yarn_application_aggregates
+<ApiConfig>: service_config_suppression_yarn_application_aggregates = None
+yarn_fs_schedule_rules
+<ApiConfig>: yarn_fs_schedule_rules = None
+yarn_fs_schedule_rules_draft
+<ApiConfig>: yarn_fs_schedule_rules_draft = None
+service_config_suppression_yarn_core_site_safety_valve
+<ApiConfig>: service_config_suppression_yarn_core_site_safety_valve = None
+hdfs_user_home_dir
+<ApiConfig>: hdfs_user_home_dir = None
+yarn_service_cgroups
+<ApiConfig>: yarn_service_cgroups = None
+service_config_suppression_yarn_nodemanager_linux_container_executor_nonsecure_mode_local_user
+<ApiConfig>: service_config_suppression_yarn_nodemanager_linux_container_executor_nonsecure_mode_local_user = None
+yarn_fs_scheduled_allocations_draft
+<ApiConfig>: yarn_fs_scheduled_allocations_draft = None
+zookeeper_service
+<ApiConfig>: zookeeper_service = zookeeper
+yarn_ssl_client_safety_valve
+<ApiConfig>: yarn_ssl_client_safety_valve = None
+yarn_resourcemanagers_health_enabled
+<ApiConfig>: yarn_resourcemanagers_health_enabled = None
+cm_yarn_container_usage_job_go_back_window_hours
+<ApiConfig>: cm_yarn_container_usage_job_go_back_window_hours = None
+kerberos_princ_name
+<ApiConfig>: kerberos_princ_name = None
+service_config_suppression_yarn_rm_ha_cluster_id
+<ApiConfig>: service_config_suppression_yarn_rm_ha_cluster_id = None
+process_groupname
+<ApiConfig>: process_groupname = None
+service_config_suppression_yarn_admin_acl
+<ApiConfig>: service_config_suppression_yarn_admin_acl = None
+log_event_retry_frequency
+<ApiConfig>: log_event_retry_frequency = None
+admin_application_list_settings
+<ApiConfig>: admin_application_list_settings = None
+cm_yarn_container_usage_output_dir
+<ApiConfig>: cm_yarn_container_usage_output_dir = None
+enable_config_alerts
+<ApiConfig>: enable_config_alerts = None
+llama_proxy_user_groups_list
+<ApiConfig>: llama_proxy_user_groups_list = None
+mapreduce_service_replication_config_safety_valve
+<ApiConfig>: mapreduce_service_replication_config_safety_valve = None
+service_health_suppression_yarn_node_managers_healthy
+<ApiConfig>: service_health_suppression_yarn_node_managers_healthy = None
+yarn_application_aggregates
+<ApiConfig>: yarn_application_aggregates = None
+service_config_suppression_ssl_client_truststore_location
+<ApiConfig>: service_config_suppression_ssl_client_truststore_location = None
+service_config_suppression_yarn_service_config_safety_valve
+<ApiConfig>: service_config_suppression_yarn_service_config_safety_valve = None
+service_config_suppression_smon_derived_configs_safety_valve
+<ApiConfig>: service_config_suppression_smon_derived_configs_safety_valve = None
+service_config_suppression_ssl_server_keystore_keypassword
+<ApiConfig>: service_config_suppression_ssl_server_keystore_keypassword = None
+-------------------------
+-------------------------
+Parameters for spark_on_yarn
+service_config_suppression_spark_on_yarn_service_env_safety_valve
+<ApiConfig>: service_config_suppression_spark_on_yarn_service_env_safety_valve = None
+spark_authenticate
+<ApiConfig>: spark_authenticate = None
+process_username
+<ApiConfig>: process_username = None
+service_config_suppression_spark_history_log_dir
+<ApiConfig>: service_config_suppression_spark_history_log_dir = None
+spark-conf/spark-env.sh_service_safety_valve
+<ApiConfig>: spark-conf/spark-env.sh_service_safety_valve = None
+spark_history_log_dir
+<ApiConfig>: spark_history_log_dir = None
+kerberos_princ_name
+<ApiConfig>: kerberos_princ_name = None
+service_config_suppression_spark_jar_hdfs_path
+<ApiConfig>: service_config_suppression_spark_jar_hdfs_path = None
+spark_jar_hdfs_path
+<ApiConfig>: spark_jar_hdfs_path = None
+process_groupname
+<ApiConfig>: process_groupname = None
+SPARK_ON_YARN_service_env_safety_valve
+<ApiConfig>: SPARK_ON_YARN_service_env_safety_valve = None
+enable_config_alerts
+<ApiConfig>: enable_config_alerts = None
+service_config_suppression_spark_yarn_history_server_count_validator
+<ApiConfig>: service_config_suppression_spark_yarn_history_server_count_validator = None
+service_triggers
+<ApiConfig>: service_triggers = None
+service_config_suppression_process_username
+<ApiConfig>: service_config_suppression_process_username = None
+enable_alerts
+<ApiConfig>: enable_alerts = None
+service_config_suppression_kerberos_princ_name
+<ApiConfig>: service_config_suppression_kerberos_princ_name = None
+service_config_suppression_gateway_count_validator
+<ApiConfig>: service_config_suppression_gateway_count_validator = None
+service_config_suppression_process_groupname
+<ApiConfig>: service_config_suppression_process_groupname = None
+yarn_service
+<ApiConfig>: yarn_service = yarn
+spark_shuffle_service_port
+<ApiConfig>: spark_shuffle_service_port = None
+service_config_suppression_smon_derived_configs_safety_valve
+<ApiConfig>: service_config_suppression_smon_derived_configs_safety_valve = None
+service_config_suppression_spark-conf/spark-env.sh_service_safety_valve
+<ApiConfig>: service_config_suppression_spark-conf/spark-env.sh_service_safety_valve = None
+smon_derived_configs_safety_valve
+<ApiConfig>: smon_derived_configs_safety_valve = None
+service_config_suppression_service_triggers
+<ApiConfig>: service_config_suppression_service_triggers = None
+-------------------------
