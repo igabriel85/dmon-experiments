@@ -20,8 +20,9 @@ limitations under the License.
 import requests
 rhURL = 'http://85.120.206.40:18088/api/v1/applications'
 # http://85.120.206.40:18088/api/v1/applications/application_1463611639333_0001/1/jobs
+# http://85.120.206.40:18088/api/v1/applications/application_1463611639333_0001/1/executors
 
 
 rh = requests.get(rhURL)
 
-print rh.text
+print rh.json()
