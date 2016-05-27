@@ -78,9 +78,9 @@ def getNodeRoles(l):
 
 
 class DICEBehavior(TaskSet):
-    tasks = {log: 2, getSpecificNodeObserver: 1, getSpecificNodeRoleObserver: 2, getAuxOverlord: 2,
-             getAuxIntervalOverlord: 1, getCollectdOverlord: 3, getLSFOverlord: 3, getESCoreOverlord: 1, getLSCoreOverlord: 1,
-             getAuxStatus: 1, getLSConf: 2, getLSCred: 1, getCoreStatus: 2, getNodeRoles: 2}
+    tasks = {log: 1, getSpecificNodeObserver: 1, getSpecificNodeRoleObserver: 1, getAuxOverlord: 1,
+             getAuxIntervalOverlord: 1, getCollectdOverlord: 1, getLSFOverlord: 1, getESCoreOverlord: 1, getLSCoreOverlord: 1,
+             getAuxStatus: 1, getLSConf: 1, getLSCred: 1, getCoreStatus: 1, getNodeRoles: 1}
 
     def on_start(self):
         getnodesObserver(self)
