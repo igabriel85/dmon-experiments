@@ -49,6 +49,22 @@ def getAuxStatus(l):
     l.client.get("/dmon/v2/overlord/aux/status")
 
 
+def getLSConf(l):
+    l.client.get("/dmon/v1/overlord/core/ls/config")
+
+
+def getLSCred(l):
+    l.client.get("/dmon/v1/overlord/core/ls/credentials")
+
+
+def getCoreStatus(l):
+    l.client.get("/dmon/v1/overlord/core/status")
+
+
+def getNodeRoles(l):
+    l.client.get("/dmon/v1/overlord/nodes/roles")
+
+
 def queryJson(l):
     query = {
         "DMON": {
@@ -90,7 +106,7 @@ def queryCSV(l):
 class DICEBehavior(TaskSet):
     tasks = {getnodesObserver: 2, getSpecificNodeObserver: 1, getSpecificNodeRoleObserver: 2, getAuxOverlord: 2,
              getAuxIntervalOverlord: 1, getCollectdOverlord: 3, getLSFOverlord: 3, getESCoreOverlord: 1, getLSCoreOverlord: 1,
-             getAuxStatus: 1, queryJson: 2, queryCSV: 2}
+             getAuxStatus: 1, getLSConf: 2, getLSCred: 1, getCoreStatus: 2, getNodeRoles: 2, queryJson: 2, queryCSV: 2}
 
     def on_start(self):
         log(self)
