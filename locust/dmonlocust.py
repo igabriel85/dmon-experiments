@@ -78,13 +78,14 @@ def getNodeRoles(l):
 
 
 class DICEBehavior(TaskSet):
-    tasks = {log: 1, getSpecificNodeObserver: 1, getSpecificNodeRoleObserver: 1, getAuxOverlord: 1,
+    tasks = {getSpecificNodeObserver: 1, getSpecificNodeRoleObserver: 1, getAuxOverlord: 1,
              getAuxIntervalOverlord: 1, getCollectdOverlord: 1, getLSFOverlord: 1, getESCoreOverlord: 1, getLSCoreOverlord: 1,
              getAuxStatus: 1, getLSConf: 1, getLSCred: 1, getNodeRoles: 1}
     #getCoreStatus()
 
     def on_start(self):
         getnodesObserver(self)
+        log(self)
 
 
 class DMONUser(HttpLocust):
