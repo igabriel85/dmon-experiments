@@ -104,12 +104,12 @@ def queryCSV(l):
 
 
 class DICEBehavior(TaskSet):
-    tasks = {getnodesObserver: 2, getSpecificNodeObserver: 1, getSpecificNodeRoleObserver: 2, getAuxOverlord: 2,
+    tasks = {log: 2, getSpecificNodeObserver: 1, getSpecificNodeRoleObserver: 2, getAuxOverlord: 2,
              getAuxIntervalOverlord: 1, getCollectdOverlord: 3, getLSFOverlord: 3, getESCoreOverlord: 1, getLSCoreOverlord: 1,
              getAuxStatus: 1, getLSConf: 2, getLSCred: 1, getCoreStatus: 2, getNodeRoles: 2, queryJson: 2, queryCSV: 2}
 
     def on_start(self):
-        log(self)
+        getnodesObserver(self)
 
 
 class DMONUser(HttpLocust):
