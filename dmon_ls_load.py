@@ -5,7 +5,7 @@ from random import *
 from collections import *
 import sys, getopt
 
-def udp_worker(ip, port, mSize):
+def udp_worker(ip, port, mSize, thID):
     '''
     :param ip: ip of logstash
     :param port: port of logstash udp input filter
@@ -15,11 +15,11 @@ def udp_worker(ip, port, mSize):
     start = time.time()
     sock = socket.socket(socket.AF_INET,
             socket.SOCK_DGRAM)
-    print('Begin sendding data to port %d' % port)
+    print'Begin sendding data from thread %s to port %d' % (str(thID), port)
     retval = 0
-    MESSAGE_BASE = 'Hello World'
+    MESSAGE_BASE = "Thread ID %s Message number %s range %s \n"
     for i in range(0, mSize):
-        retval += sock.sendto(MESSAGE_BASE % (i, port, randrange(100)), (ip, port))
+        retval += sock.sendto(MESSAGE_BASE % (str(thID), i, randrange(100)), (ip, port))
     print('Total amount of data sent %d in time %s' % (retval, str(time.time() - start)))
 
 
@@ -39,7 +39,7 @@ def tcp_worker(ip, port, mSize, thID):
     MESSAGE_BASE = "Thread ID %s Message number %s range %s \n"
     for i in range(0, mSize):
         sock.sendall(MESSAGE_BASE % (str(thID), i, randrange(100)))
-        #data = sock.recv(1024)
+        data = sock.recv(1024)
     sock.close()
     print 'Total in time for thread %s is -> %s' %(str(thID), str(time.time() - start))
 
@@ -51,11 +51,11 @@ def main(argv):
     try:
         opts, args = getopt.getopt(argv, "he:p:t:m:", ["endpoint=", "port=", "threads=", "mCount="])
     except getopt.GetoptError:
-        print 'dmon_ls_load.py -e <endpoint> -p <port> -t <thrreads'
+        print 'dmon_ls_load.py -e <endpoint> -p <port> -t <threads> -m <message_count>'
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print 'dmon_ls_load.py -e <endpoint> -p <port>'
+            print 'dmon_ls_load.py -e <endpoint> -p <port> -t <threads> -m <message_count>'
             sys.exit()
         elif opt in ('-e', '--endpoint'):
             ip = arg
@@ -69,7 +69,7 @@ def main(argv):
     workers = deque()
 
     for i in range(0, PROCESS):
-        #t = threading.Thread(target = udp_worker, args = [ip, port])   # comments this for testing tcp only
+        #t = threading.Thread(target = udp_worker, args = [ip, int(port), mSize, i])   # comments this for testing tcp only
         t = threading.Thread(target=tcp_worker, args=[ip, int(port), mSize, i])
         t.start()
         print("%s start" % t)
