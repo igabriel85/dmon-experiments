@@ -35,13 +35,13 @@ def tcp_worker(ip, port, mSize, thID):
     sock = socket.socket(socket.AF_INET,
             socket.SOCK_STREAM)
     sock.connect((ip, port))
-    print('Begin sendding data to port %d' % port)
-    MESSAGE_BASE = "THread ID %s Message number %s range %s \n"
+    print'Begin sendding data from thread %s to port %d' % (str(thID), port)
+    MESSAGE_BASE = "Thread ID %s Message number %s range %s \n"
     for i in range(0, mSize):
         sock.sendall(MESSAGE_BASE % (str(thID), i, randrange(100)))
         #data = sock.recv(1024)
     sock.close()
-    print('Total in time %s' % str(time.time() - start))
+    print 'Total in time for thread %s is -> %s' %(str(thID), str(time.time() - start))
 
 def main(argv):
     ip = '127.0.0.1'
