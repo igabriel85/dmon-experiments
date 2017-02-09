@@ -39,7 +39,7 @@ def tcp_worker(ip, port, mSize, thID):
     print'Begin sending data from thread %s to port %d' % (str(thID), port)
     MESSAGE_BASE = "Thread ID %s Message number %s range %s \n"
     for i in range(0, mSize):
-        print "Sending message %s" %int(i)
+        # print "Sending message %s" %int(i)
         sock.sendall(MESSAGE_BASE % (str(thID), i, mSize))
         #data = sock.recv(1024)
     sock.close()
