@@ -40,8 +40,8 @@ def tcp_worker(ip, port, mSize, thID):
     MESSAGE_BASE = "Thread ID %s Message number %s range %s \n"
     for i in range(0, mSize):
         print "Sending message %s" %int(i)
-        sock.sendall(MESSAGE_BASE % (str(thID), i, randrange(100)))
-        data = sock.recv(1024)
+        sock.sendall(MESSAGE_BASE % (str(thID), i, mSize))
+        #data = sock.recv(1024)
     sock.close()
     print 'Total in time for thread %s is -> %s' %(str(thID), str(time.time() - start))
 
@@ -50,7 +50,7 @@ def main(argv):
     ip = '127.0.0.1'
     port = '5999'
     PROCESS = 20
-    mSize = 10
+    mSize = 100000000
     try:
         opts, args = getopt.getopt(argv, "he:p:t:m:", ["endpoint=", "port=", "threads=", "mCount="])
     except getopt.GetoptError:
@@ -86,8 +86,8 @@ def main(argv):
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         workers = deque()
-        PROCESS = 1
-        mSize = 10
+        PROCESS = 20
+        mSize = 100
 
         for i in range(0, PROCESS):
             port = '5999'
