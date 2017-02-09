@@ -5,6 +5,7 @@ from random import *
 from collections import *
 import sys, getopt
 
+
 def udp_worker(ip, port, mSize, thID):
     '''
     :param ip: ip of logstash
@@ -35,13 +36,15 @@ def tcp_worker(ip, port, mSize, thID):
     sock = socket.socket(socket.AF_INET,
             socket.SOCK_STREAM)
     sock.connect((ip, port))
-    print'Begin sendding data from thread %s to port %d' % (str(thID), port)
+    print'Begin sending data from thread %s to port %d' % (str(thID), port)
     MESSAGE_BASE = "Thread ID %s Message number %s range %s \n"
     for i in range(0, mSize):
+        print "Sending message %s" %int(i)
         sock.sendall(MESSAGE_BASE % (str(thID), i, randrange(100)))
         data = sock.recv(1024)
     sock.close()
     print 'Total in time for thread %s is -> %s' %(str(thID), str(time.time() - start))
+
 
 def main(argv):
     ip = '127.0.0.1'
@@ -77,17 +80,18 @@ def main(argv):
     for w in workers:
         print("%s wait for join" % w)
         w.join()
+        print("%s joined" % w)
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         workers = deque()
-        PROCESS = 20
+        PROCESS = 1
         mSize = 10
 
         for i in range(0, PROCESS):
             port = '5999'
-            ip = '127.0.0.1'
+            ip = '85.120.206.27'
             #t = threading.Thread(target = udp_worker, args = [ip, port])   # comments this for testing tcp only
             t = threading.Thread(target=tcp_worker, args=[ip, int(port), mSize, i])
             t.start()
@@ -96,5 +100,7 @@ if __name__ == '__main__':
         for w in workers:
             print("%s wait for join" % w)
             w.join()
+            print("%s joined" % w)
+
     else:
         main(sys.argv[1:])
