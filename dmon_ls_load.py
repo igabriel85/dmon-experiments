@@ -97,10 +97,10 @@ def tcp_worker2(ip, port, mSize, thID, wait=0):
             # print "Failed msg sending for thread %s message %s" %(str(thID), str(i))
             failedMsg.append(i)
             continue
-        sock.close()
         thread_times.append(time.time() - start)
         if wait:
             time.sleep(float(wait))
+    sock.close()
     # print thread_times
     # print sum(thread_times)
     totalTime = sum(thread_times)
