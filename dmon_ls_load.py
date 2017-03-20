@@ -122,6 +122,7 @@ def main(argv):
     mSize = 100
     wait = 0
     execute = 0
+
     try:
         opts, args = getopt.getopt(argv, "he:p:t:m:w:x:", ["endpoint=", "port=", "threads=", "mCount=", "wait=", "execute=" ])
     except getopt.GetoptError:
@@ -144,7 +145,6 @@ def main(argv):
         elif opt in ('-e', '--execute'):
             execute = args
 
-    if execute == 0:
         workers = deque()
 
         for i in range(0, PROCESS):
@@ -157,40 +157,57 @@ def main(argv):
             print("%s wait for join" % w)
             w.join()
             print("%s joined" % w)
-    else:
-        jobs = []
-        for i in range(0, PROCESS):
-            p = multiprocessing.Process(target=tcp_worker2, args=(ip, int(port), mSize, i, wait,))
-            jobs.append(p)
-            p.start()
-            p.join()
+    # if execute == 0:
+    #     workers = deque()
+    #
+    #     for i in range(0, PROCESS):
+    #         #t = threading.Thread(target = udp_worker, args = [ip, int(port), mSize, i])   # comments this for testing tcp only
+    #         t = threading.Thread(target=tcp_worker2, args=[ip, int(port), mSize, i, wait])
+    #         t.start()
+    #         print("%s start" % t)
+    #         workers.append(t)
+    #     for w in workers:
+    #         print("%s wait for join" % w)
+    #         w.join()
+    #         print("%s joined" % w)
+    # else:
+    #     jobs = []
+    #     for i in range(0, PROCESS):
+    #         p = multiprocessing.Process(target=tcp_worker2, args=(ip, int(port), mSize, i, wait,))
+    #         jobs.append(p)
+    #         p.start()
+    #         p.join()
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         workers = deque()
-        PROCESS = 2
-        mSize = 100
+        PROCESS = 5
+        mSize = 100000000
         wait = 0
         port = '5000'
-        ip = '85.120.206.27'
+        # ip = '85.120.206.27'
+        ip = '127.0.0.1'
 
-        jobs = []
-        for i in range(0, PROCESS):
-            p = multiprocessing.Process(target=tcp_worker2, args=(ip, int(port), mSize, i, wait,))
-            jobs.append(p)
-            p.start()
-            p.join()
+        # jobs = []
         # for i in range(0, PROCESS):
-        #     #t = threading.Thread(target = udp_worker, args = [ip, port])   # comments this for testing tcp only
-        #     t = threading.Thread(target=tcp_worker2, args=[ip, int(port), mSize, i, wait])
-        #     t.start()
-        #     print("%s start" % t)
-        #     workers.append(t)
-        # for w in workers:
+        #     p = multiprocessing.Process(target=tcp_worker2, args=(ip, int(port), mSize, i, wait,))
+        #     jobs.append(p)
+        #     p.start()
+        # for w in jobs:
         #     print("%s wait for join" % w)
         #     w.join()
         #     print("%s joined" % w)
+        for i in range(0, PROCESS):
+            #t = threading.Thread(target = udp_worker, args = [ip, port])   # comments this for testing tcp only
+            t = threading.Thread(target=tcp_worker2, args=[ip, int(port), mSize, i, wait])
+            t.start()
+            print("%s start" % t)
+            workers.append(t)
+        for w in workers:
+            print("%s wait for join" % w)
+            w.join()
+            print("%s joined" % w)
 
     else:
         main(sys.argv[1:])
