@@ -6,7 +6,7 @@ from collections import *
 import sys, getopt
 from dmon_load_msg import *
 import numpy
-
+import multiprocessing
 MsgGenerator = DMonMSgGenerator('collectd_out.txt', 'yarn_out.txt')
 
 MsgGenerator.readCollectdMsg()
@@ -28,6 +28,7 @@ def percentage(part, whole):
     :return: percentage
     '''
     return 100 * float(part)/float(whole)
+
 
 def udp_worker(ip, port, mSize, thID):
     '''
@@ -88,13 +89,13 @@ def tcp_worker2(ip, port, mSize, thID, wait=0):
         try:
             sock.connect((ip, port))
         except:
-            # print "Failed connection for thread %s message %s" %(str(thID), str(i))
+            print "Failed connection for thread %s message %s" %(str(thID), str(i))
             failedMsg.append(i)
             continue
         try:
             sock.sendall(MsgGenerator.genCollectdMsg(str(thID), i, mSize))
         except:
-            # print "Failed msg sending for thread %s message %s" %(str(thID), str(i))
+            print "Failed msg sending for thread %s message %s" %(str(thID), str(i))
             failedMsg.append(i)
             continue
         sock.close()
@@ -104,16 +105,19 @@ def tcp_worker2(ip, port, mSize, thID, wait=0):
     # print thread_times
     # print sum(thread_times)
     totalTime = sum(thread_times)
-    mediumTime = sum(thread_times)/len(thread_times)
+    try:
+        mediumTime = sum(thread_times)/len(thread_times)
+    except:
+        mediumTime = 0
     mediantime = median(thread_times)
     nrOfFailed = len(failedMsg)
     failedPercent = percentage(nrOfFailed, mSize)
+    print failedMsg
     print 'Total  time for thread %s is -> %s' %(str(thID), str(totalTime))
     print 'Average event time for thread %s is -> %s' %(str(thID), str(mediumTime))
     print 'Median event time for thread %s is -> %s' %(str(thID), str(mediantime))
     print 'Failed thread %s messages: %s' %(str(thID), str(nrOfFailed))
     print 'Percentage of Failed Messages thread %s is : %s' %(str(thID), str(failedPercent))
-
 
 
 def main(argv):
@@ -122,14 +126,16 @@ def main(argv):
     PROCESS = 5
     mSize = 100
     wait = 0
+    execute = 0
+
     try:
-        opts, args = getopt.getopt(argv, "he:p:t:m:w:", ["endpoint=", "port=", "threads=", "mCount=", "wait="])
+        opts, args = getopt.getopt(argv, "he:p:t:m:w:x:", ["endpoint=", "port=", "threads=", "mCount=", "wait=", "execute=" ])
     except getopt.GetoptError:
-        print 'dmon_ls_load.py -e <endpoint> -p <port> -t <threads> -m <message_count> -w <delay between msg>'
+        print 'dmon_ls_load.py -e <endpoint> -p <port> -t <threads> -m <message_count> -w <delay between msg> -e <thread_or_process>'
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print 'dmon_ls_load.py -e <endpoint> -p <port> -t <threads> -m <message_count> -w <delay between msg>'
+            print 'dmon_ls_load.py -e <endpoint> -p <port> -t <threads> -m <message_count> -w <delay between msg> -e <thread_or_process>'
             sys.exit()
         elif opt in ('-e', '--endpoint'):
             ip = arg
@@ -141,31 +147,63 @@ def main(argv):
             mSize = int(arg)
         elif opt in ('-w', '--wait'):
             wait = arg
+        elif opt in ('-e', '--execute'):
+            execute = args
 
-    workers = deque()
+        workers = deque()
 
-    for i in range(0, PROCESS):
-        #t = threading.Thread(target = udp_worker, args = [ip, int(port), mSize, i])   # comments this for testing tcp only
-        t = threading.Thread(target=tcp_worker2, args=[ip, int(port), mSize, i, wait])
-        t.start()
-        print("%s start" % t)
-        workers.append(t)
-    for w in workers:
-        print("%s wait for join" % w)
-        w.join()
-        print("%s joined" % w)
+        for i in range(0, PROCESS):
+            #t = threading.Thread(target = udp_worker, args = [ip, int(port), mSize, i])   # comments this for testing tcp only
+            t = threading.Thread(target=tcp_worker2, args=[ip, int(port), mSize, i, wait])
+            t.start()
+            print("%s start" % t)
+            workers.append(t)
+        for w in workers:
+            print("%s wait for join" % w)
+            w.join()
+            print("%s joined" % w)
+    # if execute == 0:
+    #     workers = deque()
+    #
+    #     for i in range(0, PROCESS):
+    #         #t = threading.Thread(target = udp_worker, args = [ip, int(port), mSize, i])   # comments this for testing tcp only
+    #         t = threading.Thread(target=tcp_worker2, args=[ip, int(port), mSize, i, wait])
+    #         t.start()
+    #         print("%s start" % t)
+    #         workers.append(t)
+    #     for w in workers:
+    #         print("%s wait for join" % w)
+    #         w.join()
+    #         print("%s joined" % w)
+    # else:
+    #     jobs = []
+    #     for i in range(0, PROCESS):
+    #         p = multiprocessing.Process(target=tcp_worker2, args=(ip, int(port), mSize, i, wait,))
+    #         jobs.append(p)
+    #         p.start()
+    #         p.join()
 
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         workers = deque()
-        PROCESS = 20
-        mSize = 100000
+        PROCESS = 5
+        mSize = 10
         wait = 0
+        port = '5000'
+        ip = '85.120.206.27'
+        # ip = '127.0.0.1'
 
+        # jobs = []
+        # for i in range(0, PROCESS):
+        #     p = multiprocessing.Process(target=tcp_worker2, args=(ip, int(port), mSize, i, wait,))
+        #     jobs.append(p)
+        #     p.start()
+        # for w in jobs:
+        #     print("%s wait for join" % w)
+        #     w.join()
+        #     print("%s joined" % w)
         for i in range(0, PROCESS):
-            port = '5000'
-            ip = '85.120.206.27'
             #t = threading.Thread(target = udp_worker, args = [ip, port])   # comments this for testing tcp only
             t = threading.Thread(target=tcp_worker2, args=[ip, int(port), mSize, i, wait])
             t.start()
