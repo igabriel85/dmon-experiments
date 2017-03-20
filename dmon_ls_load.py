@@ -100,7 +100,7 @@ def tcp_worker2(ip, port, mSize, thID, wait=0):
         sock.close()
         thread_times.append(time.time() - start)
         if wait:
-            time.sleep(wait)
+            time.sleep(float(wait))
     # print thread_times
     # print sum(thread_times)
     totalTime = sum(thread_times)
