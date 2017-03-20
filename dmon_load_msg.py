@@ -58,12 +58,12 @@ class DMonMSgGenerator:
     def dummyMsg(self, thID, msgNR, mrange):
         return "Thread ID %s Message number %s range %s \n" % (str(thID), str(msgNR), str(mrange))
 
-test = DMonMSgGenerator('collectd_out.txt', 'yarn.out')
+# test = DMonMSgGenerator('collectd_out.txt', 'yarn.out')
 #
-readTest = test.readCollectdMsg()
+# readTest = test.readCollectdMsg()
 # test.readyarnMsg()
 #
-print test.genCollectdMsg(1, 99, 100)
+# print test.genCollectdMsg(1, 99, 100)
 # print test.dummyMsg(1, 99, 100)
 #
 # print test.genYarnMsg(1, 99, 100)

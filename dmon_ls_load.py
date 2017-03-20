@@ -121,14 +121,15 @@ def main(argv):
     port = '5999'
     PROCESS = 5
     mSize = 100
+    wait = 0
     try:
-        opts, args = getopt.getopt(argv, "he:p:t:m:", ["endpoint=", "port=", "threads=", "mCount="])
+        opts, args = getopt.getopt(argv, "he:p:t:m:w:", ["endpoint=", "port=", "threads=", "mCount=", "wait="])
     except getopt.GetoptError:
-        print 'dmon_ls_load.py -e <endpoint> -p <port> -t <threads> -m <message_count>'
+        print 'dmon_ls_load.py -e <endpoint> -p <port> -t <threads> -m <message_count> -w <delay between msg>'
         sys.exit(2)
     for opt, arg in opts:
         if opt == '-h':
-            print 'dmon_ls_load.py -e <endpoint> -p <port> -t <threads> -m <message_count>'
+            print 'dmon_ls_load.py -e <endpoint> -p <port> -t <threads> -m <message_count> -w <delay between msg>'
             sys.exit()
         elif opt in ('-e', '--endpoint'):
             ip = arg
@@ -138,12 +139,14 @@ def main(argv):
             PROCESS = int(arg)
         elif opt in ('-m', '--mCount'):
             mSize = int(arg)
+        elif opt in ('-w', '--wait'):
+            wait = arg
 
     workers = deque()
 
     for i in range(0, PROCESS):
         #t = threading.Thread(target = udp_worker, args = [ip, int(port), mSize, i])   # comments this for testing tcp only
-        t = threading.Thread(target=tcp_worker, args=[ip, int(port), mSize, i])
+        t = threading.Thread(target=tcp_worker2, args=[ip, int(port), mSize, i, wait])
         t.start()
         print("%s start" % t)
         workers.append(t)
@@ -158,12 +161,13 @@ if __name__ == '__main__':
         workers = deque()
         PROCESS = 20
         mSize = 100000
+        wait = 0
 
         for i in range(0, PROCESS):
             port = '5000'
             ip = '85.120.206.27'
             #t = threading.Thread(target = udp_worker, args = [ip, port])   # comments this for testing tcp only
-            t = threading.Thread(target=tcp_worker2, args=[ip, int(port), mSize, i])
+            t = threading.Thread(target=tcp_worker2, args=[ip, int(port), mSize, i, wait])
             t.start()
             print("%s start" % t)
             workers.append(t)
