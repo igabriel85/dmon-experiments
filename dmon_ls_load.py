@@ -144,7 +144,7 @@ def main(argv):
         elif opt in ('-e', '--execute'):
             execute = args
 
-    if execute:
+    if execute == 0:
         workers = deque()
 
         for i in range(0, PROCESS):
@@ -163,6 +163,7 @@ def main(argv):
             p = multiprocessing.Process(target=tcp_worker2, args=(ip, int(port), mSize, i, wait,))
             jobs.append(p)
             p.start()
+            p.join()
 
 
 if __name__ == '__main__':
@@ -179,6 +180,7 @@ if __name__ == '__main__':
             p = multiprocessing.Process(target=tcp_worker2, args=(ip, int(port), mSize, i, wait,))
             jobs.append(p)
             p.start()
+            p.join()
         # for i in range(0, PROCESS):
         #     #t = threading.Thread(target = udp_worker, args = [ip, port])   # comments this for testing tcp only
         #     t = threading.Thread(target=tcp_worker2, args=[ip, int(port), mSize, i, wait])
