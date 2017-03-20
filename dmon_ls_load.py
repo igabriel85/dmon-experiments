@@ -80,11 +80,11 @@ def tcp_worker2(ip, port, mSize, thID, wait=0):
     '''
     thread_times = []
     print'Begin sending data from thread %s to port %d' % (str(thID), port)
+    sock = socket.socket(socket.AF_INET,
+                         socket.SOCK_STREAM)
     for i in range(0, mSize):
         start = time.time()
         failedMsg = []
-        sock = socket.socket(socket.AF_INET,
-                             socket.SOCK_STREAM)
         try:
             sock.connect((ip, port))
         except:
