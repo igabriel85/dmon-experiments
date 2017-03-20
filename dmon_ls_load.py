@@ -7,7 +7,7 @@ import sys, getopt
 from dmon_load_msg import *
 import numpy
 
-MsgGenerator = DMonMSgGenerator('collectd_out.txt', 'yarn.out')
+MsgGenerator = DMonMSgGenerator('collectd_out.txt', 'yarn_out.txt')
 
 MsgGenerator.readCollectdMsg()
 MsgGenerator.readyarnMsg()
