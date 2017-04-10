@@ -20,7 +20,6 @@ limitations under the License.
 import requests
 
 
-
 def getYarnInformation(yhIP, yhPort):
     rhURL = 'http://%s:%s/ws/v1/history' %(yhIP, str(yhPort))
     print rhURL
@@ -56,6 +55,7 @@ def getYarnJobsStatistic(yhIP, yhPort, jDescriptor):
         print "No jobs found"
         return 0
     jList = []
+    print len(jDescriptor['jobs']['job'])
     for j in jDescriptor['jobs']['job']:
         jList.append(j['id'])
 
@@ -70,23 +70,49 @@ def getYarnJobsStatistic(yhIP, yhPort, jDescriptor):
         responseList.append(rJobId.json())
     retDict = {}
     retDict['jobs'] = responseList
+
+    return retDict
+
+
+def getYarnJobTasks(yhIP, yhPort, jDescriptor):
+    if jDescriptor['jobs'] is None:
+        print "No jobs found"
+        return 0
+    jList = []
+    for j in jDescriptor['jobs']['job']:
+        jList.append(j['id'])
+
+    responseList = []
+    for id in jList:
+        jURL = 'http://%s:%s/ws/v1/history/mapreduce/jobs/%s/tasks' %(yhIP, str(yhPort), id)
+        try:
+            rJobId = requests.get(jURL)
+        except Exception as inst:
+            print "Exception %s with %s while getting job details" %(type(inst), inst.args)
+            return 0
+        data = rJobId.json()
+        data['jobId'] = id
+        responseList.append(data)
+    retDict = {}
+    retDict['jobs'] = responseList
+
     return retDict
 
 if __name__ == '__main__':
-    hServer = "85.120.206.35"
+    hServer = "85.120.206.40"
     hPort = 19888
 
     historyCode, historyResponse, historyInfoCode, historyInfoResponse = getYarnInformation(hServer, hPort)
 
 
-    print historyCode
-    print historyResponse
-    print historyInfoCode
-    print historyInfoResponse
+    # print historyCode
+    # print historyResponse
+    # print historyInfoCode
+    # print historyInfoResponse
 
     jStatus, jResponse = getYarnJobs(hServer, hPort)
 
-    print jStatus
+    #print jStatus
     print jResponse
 
     # for j in jResponse['jobs']['job']:
@@ -94,3 +120,6 @@ if __name__ == '__main__':
 
     resp = getYarnJobsStatistic(hServer, hPort, jResponse)
     print resp
+
+    respTask = getYarnJobTasks(hServer, hPort, jResponse)
+    print respTask

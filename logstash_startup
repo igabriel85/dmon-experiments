@@ -1,0 +1,1 @@
+./logstash -f <config_file> --http.host <http_host> -w <nr of workers> -b <batch_size> -u <pipeline_delay_ms>
